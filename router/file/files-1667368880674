@@ -1,0 +1,75 @@
+### 知识点
+
+**决策的分类：**
+
+1)结构化决策，是指对某一决策过程的环境及规则，能用确定的模型或语言描述，以适当的算法产生决策方案，并能从多种方案中选择最优解的决策。
+
+2)非结构化决策，是指决策过程复杂，不可能用确定的模型和语言来描述其决策过程，更无所谓最优解的决策。
+
+3)半结构化决策，是介于以上二者之间的决策，这类决策可以建立适当的算法产生决策方案，使决策方案中得到较优的解。
+
+### 概念
+
+**计算机模拟：**就是利用计算机来模拟和实验现有的或还没有的系统。
+
+**管理系统的计算机模拟：**就是利用计算机和设计好的模型对已有的或设想的管理系统、管理策略、管理方法或管理手段进行模拟实验，以便对所设计的方案进行分析和判断，提出进一步决策所需的依据。
+
+**蒙特卡洛模拟方法：**本质上为确定性的问题使用随机数求解叫做蒙特卡洛法
+
+### 综合
+
+**为什么计算机模拟技术已经成为决策支持系统（DSS）的强有力的工具？**
+
+答：是因为计算机模拟平台现在很成熟，所以能解决模型库的构建与求解问题。
+
+**计算机模拟技术与决策支持系统的关系是什么**？
+
+答：
+
+> 1.决策支持系统的核心时模型库
+>
+> 2.模型库要解决模型的构建与求解
+>
+> 3.由于现在的计算机模拟技术很成熟，就可以解决模型的构建与求解这两大问题，因此算机模拟技术已经成为决策支持系统（DSS）的强有力的工具
+
+### 蒲丰投针问题
+
+![image-20220905091427840](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220905091427840.png)
+
+管理系统按，系统分类
+
+![image-20220908101600326](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220908101600326.png)
+
+![image-20220908101629734](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220908101629734.png)
+
+![image-20220908101945139](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220908101945139.png)
+
+管理系统属于动态的离散的随机的系统
+
+![image-20220908102358999](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220908102358999.png)
+
+什么是图解模型
+
+==**单窗口排队系统**==
+
+![image-20220908103723214](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220908103723214.png)
+
+![image-20220908110732592](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220908110732592.png)
+
+![image-20220908105957279](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220908105957279.png)
+
+![image-20220908110813047](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220908110813047.png)
+
+模拟结果
+
+![image-20220908111010812](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220908111010812.png)
+
+![image-20220908112108929](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220908112108929.png)
+
+什么是活动实体和永久实体？
+
+![image-20220908112910326](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220908112910326.png)
+
+![image-20220929111555063](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220929111555063.png)
+
+![image-20220929111632949](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220929111632949.png)
