@@ -3,7 +3,7 @@ const router = express.Router();
 const file_handle = require('../router_handle/file');
 const path = require('path')
 // 解析form-data
-const multer = require('multer')
+const multer = require('multer');
 
 // const storage = multer.diskStorage({
 //     //保存路径
