@@ -7,6 +7,18 @@ const fileRouter = require('./router/file')
 const cors = require('cors');
 app.use(cors());
 
+// 封装res.send()函数为res.cc()，注意要在注册路由之前
+app.use((req, res, next) => {
+    res.cc = function (err, status = 1) {
+        res.send({
+            status,
+            // instanceof用于判断左边是否是右边的构造实例
+            message: err instanceof Error ? err.message : err
+        })
+    };
+    next();
+});
+
 // 解析表单数据
 app.use(express.urlencoded({ extended: false }));
 

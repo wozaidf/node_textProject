@@ -1,23 +1,37 @@
+const db = require('../database/index')
 const uploadFile = (req, res) => {
-    // // 整理数据
-    // console.log(req.file);
-    // const uploadFile = req.file;
-    // if (uploadFile.size < 1024) {
-    //     uploadFile.size = Math.ceil(uploadFile.size) + "B";
-    //  } else if (uploadFile.size / 1024 < 1024) {
-    //     uploadFile.size = Math.ceil(uploadFile.size / 1024) + "KB";
-    //  } else if (uploadFile.size / 1024 / 1024 < 5) {
-    //     uploadFile.size = Math.ceil(uploadFile.size / 1024 / 1024) + "MB";
-    //  }
-    //  // 生成现在上传的时间
-    //  console.log(uploadFile.size);
-    //  const date = new Date().toLocaleString();
-    //  uploadFile.time = date;
-    // console.log(uploadFile);
-    console.log(req.file);
-    res.send('ok')
+    const { filename, path, size, fieldname } = req.file
+    console.log(filename, path, size, fieldname);
+    // 操作数据存文件信息
+    const sql = 'select * from file_info where filename = ?'
+    db.query(sql, filename, (err, results) => {
+        if (err) return res.cc(err);
+        if (results.length > 0) return res.cc("不要重复上传文件");
+        const sqlStr = 'insert into file_info(filename,path,size,fieldname) values(?,?,?,?)'
+        db.query(sqlStr, [filename, path, size, fieldname], (err, results) => {
+            console.log(results);
+            if (err) return res.send(err);
+            if (results.affectedRows != 1) return res.cc("添加失败");
+            res.cc("添加成功", 0)
+        })
+    })
+
 }
 
+const fileList = (req, res) => {
+    // 获取列表
+    const sqlStr = 'select * from file_info where is_delete = 0 order by id'
+    db.query(sqlStr, (err, results) => {
+        if (err) return res.cc(err);
+        if (!results.length > 0) return res.cc("获取失败");
+        res.send({
+            status: 0,
+            message: "获取文件列表成功成功",
+            data: results
+        })
+    })
+}
 module.exports = {
-    uploadFile
+    uploadFile,
+    fileList
 }
