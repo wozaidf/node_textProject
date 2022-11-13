@@ -5,6 +5,12 @@ const path = require('path');
 // 解析form-data的中间件
 const multer = require('multer');
 
+// 导入验证表单数据的中间件
+const expressJoi = require('@escook/express-joi');
+// 导入需要验证的规则对象
+const { delete_file_schema } = require('../schema/file');
+
+
 // 配置multer
 const upload = multer({
   fileFilter(req, file, callback) {
@@ -24,9 +30,9 @@ const upload = multer({
   })
 });
 
-
 router.post('/uploadFile', upload.single('file'), file_handle.uploadFile);
 router.get('/getFileList', file_handle.fileList);
+router.delete('/deleteFile/:id', expressJoi(delete_file_schema), file_handle.deleteFile)
 
 
 module.exports = router;
