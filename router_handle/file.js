@@ -25,7 +25,7 @@ const fileList = (req, res) => {
             status: 0,
             message: "获取文件列表成功成功",
             data: results
-        })
+        });
     })
 }
 

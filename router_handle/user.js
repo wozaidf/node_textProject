@@ -20,7 +20,8 @@ const login = (req, res) => {
         res.send({
             status: 0,
             message: "登陆成功",
-            token
+            token,
+            data: results[0].username
         })
     })
 };
